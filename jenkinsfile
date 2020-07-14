@@ -1,0 +1,15 @@
+pipeline{
+    agent{ label: 'NODE1'}
+    stages{
+        stage('SCM'){
+            steps{
+                git 'https://github.com/pavankiriti/game-of-life.git'
+            }
+        }
+        stage('build'){
+            steps{
+                sh 'mvn package'
+            }
+        }
+    }
+}
