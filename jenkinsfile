@@ -1,5 +1,8 @@
 pipeline{
     agent{ label 'NODE1'}
+    triggers {
+        upstream(upstreamProjects: 'test-webhook', threshold: hudson.model.Result.SUCCESS)
+    } 
     stages{
         stage('SCM'){
             steps{
