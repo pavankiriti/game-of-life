@@ -2,7 +2,7 @@ pipeline{
     agent{ label 'NODE1'}
     triggers {
         upstream(upstreamProjects: 'test_dec', threshold: hudson.model.Result.SUCCESS)
-    } 
+    }
     stages{
         stage('SCM'){
             steps{
